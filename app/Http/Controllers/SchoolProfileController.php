@@ -10,10 +10,10 @@ class SchoolProfileController extends Controller
 {
     //
 
-    public function school_profiles(Request $request)
+    public function school_profile(Request $request)
     {
         # code...
-        $profile = SchoolProfile::get();
+        $profile = SchoolProfile::first();
 
         return $profile;
 

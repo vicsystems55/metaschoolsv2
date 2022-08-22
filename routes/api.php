@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ApiAuthController;
 
+use App\Http\Controllers\SchoolProfileController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,5 +27,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [ApiAuthController::class, 'register']);
 
 Route::post('/login', [ApiAuthController::class, 'login'])->middleware('checkdb');
+
+Route::get('/school_profile', [SchoolProfileController::class, 'school_profile'])->middleware('checkdb');
+
 
 

@@ -18,7 +18,10 @@ class CheckDBMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        \Illuminate\Support\Facades\Config::set('database.connections.mysql.database', $request->url);
+
+        $db = 'icreatea_'.str_replace(".icreateagency.com","",$request->url);
+
+        \Illuminate\Support\Facades\Config::set('database.connections.mysql.database', $db);
         return $next($request);
     }
 }
