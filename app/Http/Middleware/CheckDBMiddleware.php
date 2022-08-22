@@ -23,7 +23,7 @@ class CheckDBMiddleware
         $db = 'icreatea_'.str_replace(".icreateagency.com","",$request->url);
 
         \Illuminate\Support\Facades\Config::set('database.connections.mysql.database', $db);
-        Artisan::call('migrate --database='.$db);
+    
         return $next($request);
     }
 }
