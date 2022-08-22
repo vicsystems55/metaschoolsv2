@@ -168,7 +168,7 @@ class ApiAuthController extends Controller
 
         // return $request->all();
 
-        try {
+ 
             
             
             if (!Auth::attempt($request->only('email', 'password'))) {
@@ -190,11 +190,7 @@ class ApiAuthController extends Controller
     
             }
             
-        } catch (\Throwable $th) {
-            //throw $th;
-
-            return $th;
-        }
+       
 
 
             
