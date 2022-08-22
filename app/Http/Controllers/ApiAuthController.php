@@ -110,7 +110,7 @@ class ApiAuthController extends Controller
         // ]);
 
         $datax = [
-            'name' => $user->name,
+            'name' => $profile->school_name,
             'email' => $user->email,
             'url' => $user->url,
             'school_logo' => $profile->school_logo
