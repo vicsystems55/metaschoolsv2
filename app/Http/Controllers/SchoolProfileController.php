@@ -13,9 +13,19 @@ class SchoolProfileController extends Controller
     public function school_profile(Request $request)
     {
         # code...
-        $profile = SchoolProfile::first();
+            try {
+                
+                $profile = SchoolProfile::first();
 
-        return $profile;
+                return $profile;
+                
+
+            } catch (\Throwable $th) {
+                //throw $th;
+
+                return $th;
+
+            }
 
     }
 }
