@@ -166,25 +166,35 @@ class ApiAuthController extends Controller
     {
         # code...
 
-
-        if (!Auth::attempt($request->only('email', 'password'))) {
-
-            return response()->json([
-            'message' => 'Invalid login details'
-                       ], 401);
-        }else{
-
-            $user = User::where('email', $request['email'])->firstOrFail();
+        try {
             
-            $token = $user->createToken('auth_token')->plainTextToken;
             
-            return response()->json([
-                       'access_token' => $token,
-                       'user_data' => $user,
-                       'token_type' => 'Bearer',
-            ]);
+            if (!Auth::attempt($request->only('email', 'password'))) {
+    
+                return response()->json([
+                'message' => 'Invalid login details'
+                           ], 401);
+            }else{
+    
+                $user = User::where('email', $request['email'])->firstOrFail();
+                
+                $token = $user->createToken('auth_token')->plainTextToken;
+                
+                return response()->json([
+                           'access_token' => $token,
+                           'user_data' => $user,
+                           'token_type' => 'Bearer',
+                ]);
+    
+            }
+            
+        } catch (\Throwable $th) {
+            //throw $th;
 
+            return $th;
         }
+
+
             
 
     }
