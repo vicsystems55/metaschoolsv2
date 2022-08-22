@@ -71,7 +71,7 @@ class ApiAuthController extends Controller
             $profile = SchoolProfile::create([
                 'school_name' => $request->school_name,
                 'school_address' => $request->address,
-                'school_logo' => config('app.url').'avatars/'.$new_name,
+                'school_logo' => config('app.url').'school_logos/'.$new_name,
                 'url' => $user->url,
             ]);
 
