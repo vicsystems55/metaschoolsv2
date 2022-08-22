@@ -166,6 +166,8 @@ class ApiAuthController extends Controller
     {
         # code...
 
+        return $request->all();
+
         try {
             
             
